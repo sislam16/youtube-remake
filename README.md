@@ -44,7 +44,7 @@
 - The results **MUST** me ordered in columns with **TWO** results per row
 - For each video / result:
   - You must display the thumbnail image
-  - You must displau the title of the video
+  - You must display the title of the video
 - Each video / result must be clickable
 - Clicking on the video should take you to the Video page
 - No pagination is needed for the search results, just display first 8 results

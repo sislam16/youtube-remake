@@ -1,4 +1,4 @@
-# UNIT 4 FINAL
+# Unit 4 Assessment
 
 ## Task
 
@@ -11,8 +11,8 @@
   - React-Router-Dom
   - Bootstrap
     - Or equivalent UI frameworks like SemanticUI / Reactstrap
-- Create-React-App ... obviously
-- Using any thing else will mean your **Final Exam** is incomplete
+- Create-React-App
+- Using any thing else will mean your submission is incomplete
 
 ## Required Featues
 

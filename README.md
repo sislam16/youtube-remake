@@ -67,3 +67,6 @@
 - Form should check to see if you entered both name AND comment, then allow you to post the comment
   - Else, it should return an alert saying to fill everything out
 
+## Rubric
+
+![unit4AssessmentRubric](./assets/unit4AssessmentRubric.png)

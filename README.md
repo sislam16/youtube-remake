@@ -15,6 +15,10 @@ For this Assessment you will be building a simple YouTube client application. Yo
   - [OPTIONAL] `bootstrap`, or equivalent UI frameworks like `semantic-ui-react` / `reactstrap`
   - Using anything else will mean your submission is incomplete
 
+## Setup
+  * To be able to make requests/calls to the YouTube API you will need to get an API key and use it in your network requests. Learn [How to get an API key here](http://bit.ly/2Tx1h5d). Once obtained, the key needs to be used in a url query parameter like so: `key=YOUR_API_KEY`. 
+  * To embed the YouTube player and show a video in your application install and use the npm package `react-youtube`. As always read [its documentation](https://www.npmjs.com/package/react-youtube). The docs have an example of how to use this package and its component.
+
 ## Required Features
 - Navbar with links
 - Homepage with search form and results area
@@ -57,7 +61,7 @@ For this Assessment you will be building a simple YouTube client application. Yo
 <img src='assets/video.png' width='400'>
 
 - User should be able to access this page by any link to the specific video id
-- Shows the YouTube player to show that specific YouTube video
+- Shows the YouTube player to show that specific YouTube video. Use `react-youtube` for this.
 - Has a form below the video to submit a comment. The form will need:
   - A name input
   - A comment input

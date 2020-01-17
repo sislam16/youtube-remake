@@ -17,13 +17,13 @@ For this Assessment you will be building a simple YouTube client application. Yo
 
 ## Required Features
 - Navbar with links
-- Homepage with search form and results
+- Homepage with search form and results area
 - Video page to play a video and leave comments
 - About page with short description
 - Should be styled to the best of your ability
 
 ### Navbar
-- Should show on EVERY page of the application
+- Must show on every page/route of the application.
 - Shows a logo (In this case says Youtube)
 - Shows links to the following pages:
   - Home

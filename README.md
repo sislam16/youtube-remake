@@ -1,15 +1,17 @@
 # Unit 4 Assessment
 
+For this Assessment you will be building a simple YouTube client application. Your app will allow users to search for videos, watch a video and leave a comment for it.
+
 ## Task
 
-- Create a SPA with two pages
-- You will use the official YouTube Data API v3
-  - https://developers.google.com/youtube/v3/docs/
-- Your app must make use of React Router v4
+- Create a React App with three pages; Home, Video and About
+- You will use the official YouTube Data API v3. [Docs Here](https://developers.google.com/youtube/v3/docs/).
+- Your app must make use of React Router for having multiple pages. 
 - Your app may NOT use any other dependencies other than the following:
-  - `axios`
+  - `react` and its accompanying libraries like `react-dom` and `react-scripts`.
   - `react-router-dom`
   - `react-youtube`
+  - `axios`
   - [OPTIONAL] `bootstrap`, or equivalent UI frameworks like `semantic-ui-react` / `reactstrap`
   - Using anything else will mean your submission is incomplete
 

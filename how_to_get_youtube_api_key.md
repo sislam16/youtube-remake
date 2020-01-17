@@ -4,8 +4,7 @@ You can follow the step by step or watch the video for the instructions.
 
 You will need to go to the [Google Developer Console](https://console.developers.google.com/). Create a project, enable the YouTube Data API v3 and create credentials to access the API. 
 
-## Video 
-https://www.youtube.com/watch?v=3jZ5vnv-LZc
+## Video [Here](http://bit.ly/36ZIMKA)
 
 ## Step by Step
 #### 1. Go to the [Google Developer Console](https://console.developers.google.com/). Make sure you are logged in in your Google account.

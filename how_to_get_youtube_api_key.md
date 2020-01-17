@@ -1,8 +1,13 @@
 # How to get an API Key for the Youtube API.
 
-You will need to go to the [Google Developer Console](https://console.developers.google.com/). Create a project, enable the YouTube Data API v3 and create credentials to access the API
+You can follow the step by step or watch the video for the instructions.
 
-## Breakdown
+You will need to go to the [Google Developer Console](https://console.developers.google.com/). Create a project, enable the YouTube Data API v3 and create credentials to access the API. 
+
+## Video 
+https://www.youtube.com/watch?v=3jZ5vnv-LZc
+
+## Step by Step
 #### 1. Go to the [Google Developer Console](https://console.developers.google.com/). Make sure you are logged in in your Google account.
 
 #### 2. In the top left corner locate and click the button `Select Project`

@@ -15,8 +15,25 @@ For this Assessment you will be building a simple YouTube client application. Yo
   - [OPTIONAL] `bootstrap`, or equivalent UI frameworks like `semantic-ui-react` / `reactstrap`
   - Using anything else will mean your submission is incomplete
 
-## Setup
+## Setup and the YouTube API
+
+### API Key
   * To be able to make requests/calls to the YouTube API you will need to get an API key and use it in your network requests. Learn [How to get an API key here](http://bit.ly/2Tx1h5d). Once obtained, the key needs to be used in a url query parameter like so: `key=YOUR_API_KEY`. 
+  * Once you receive the API Key put it inside of a file in `src/` that can be named `secrets.js` and export it like so:
+  ```js
+  // src/secrets.js
+  const API_KEY = "YOUR_ACTUAL_API_KEY"
+  export default API_KEY
+  ```
+  Then import your key as you would import anything else and as needed in your files.
+
+### API Endpoints
+  * YouTube API root endpoint: `https://www.googleapis.com/youtube/v3`
+  * The two endpoints you will need are:
+    * `GET` `/search` [Docs Here](https://developers.google.com/youtube/v3/docs/search/list)
+    * `GET` `/videos` [Docs Here](https://developers.google.com/youtube/v3/docs/videos/list)
+
+### Playing a Video
   * To embed the YouTube player and show a video in your application install and use the npm package `react-youtube`. As always read [its documentation](https://www.npmjs.com/package/react-youtube). The docs have an example of how to use this package and its component.
 
 ## Required Features

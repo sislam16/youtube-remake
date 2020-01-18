@@ -25,7 +25,7 @@ For this Assessment you will be building a simple YouTube client application. Yo
   const API_KEY = "YOUR_ACTUAL_API_KEY"
   export default API_KEY
   ```
-  Then import your key as you would import anything else and as needed in your files.
+  Then import your key as you would import anything else and use it as needed in your files.
 
 ### API Endpoints
   * YouTube API root endpoint: `https://www.googleapis.com/youtube/v3`
@@ -35,6 +35,8 @@ For this Assessment you will be building a simple YouTube client application. Yo
 
 ### Playing a Video
   * To embed the YouTube player and show a video in your application install and use the npm package `react-youtube`. As always read [its documentation](https://www.npmjs.com/package/react-youtube). The docs have an example of how to use this package and its component.
+
+# The App
 
 ## Required Features
 - Navbar with links

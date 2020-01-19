@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import axios from 'axios'
 import API_KEY from '../secrets'
 import Thumbnail from './Thumbnail'
-// import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 class Homepage extends Component {
     constructor() {
@@ -30,7 +30,7 @@ class Homepage extends Component {
         event.preventDefault();
         console.log('form submitted')
 
-        const { input, feed } = this.state
+        const { input } = this.state
         const getVideos = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=${input}&key=${API_KEY}`
         try {
             const { data } = await axios.get(getVideos)
@@ -52,6 +52,7 @@ class Homepage extends Component {
     // componentDidUpdate(){
     //     this.handlePostClick();
     // }
+    
     handlePostClick = async (event) => {
         console.log('rerouting to video pg')
         const id = event.target.id
@@ -59,6 +60,7 @@ class Homepage extends Component {
         try {
             const { data } = await axios.get(rerouteToVideo)
             console.log(data)
+            // <Redirect to='/videos/:id' from='/home'>
         } catch (error) {
                 console.log(error)
         }
@@ -96,6 +98,7 @@ class Homepage extends Component {
                                     id={el.id.videoId}
                                     key={el.snippet.channelId}
                                     handlePostClick = {this.handlePostClick}
+                                    alt='yt video'
                                 >
                                     {el}
                                 </Thumbnail>

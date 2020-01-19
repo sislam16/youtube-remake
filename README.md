@@ -25,7 +25,7 @@ For this Assessment you will be building a simple YouTube client application. Yo
   const API_KEY = "YOUR_ACTUAL_API_KEY"
   export default API_KEY
   ```
-  Then import your key as you would import anything else and use it as needed in your files.
+  Then import your key as you would import anything else and use it as needed in your files. Make sure to add the name of this file to your `.gitignore` file so that it is not tracked by git and your API Key doesn't end up on GitHub (where it will be stolen).
 
 ### API Endpoints
   * YouTube API root endpoint: `https://www.googleapis.com/youtube/v3`

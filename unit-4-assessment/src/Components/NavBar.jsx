@@ -16,16 +16,16 @@ const NavBar = () => {
                     </ul>
                 </nav>
 
-                <Switch>
+                {/* <Switch>
                     <Route path='/'>
                        < Homepage/>
                     </Route>
                     {/* <Route path='/videos/:id'/> */}
-                    <Route exact path='/about'>
+                    {/* <Route exact path='/about'>
                         <About />
                     </Route>
                    
-                </Switch>
+                </Switch> */}
             </div>
         </Router>
 

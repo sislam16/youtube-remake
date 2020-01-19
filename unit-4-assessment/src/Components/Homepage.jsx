@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import axios from 'axios'
 import API_KEY from '../secrets'
 import Thumbnail from './Thumbnail'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+// import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class Homepage extends Component {
     constructor() {
@@ -13,6 +13,10 @@ class Homepage extends Component {
             input: '',
             feed: []
         }
+    }
+
+    componentDidMount(){
+        console.log('mounted')
     }
 
     handleInput = (event) => {
@@ -45,21 +49,20 @@ class Homepage extends Component {
 
     }
 
-    // handlePostClick = async (event) => {
-    //     console.log('rerouting to video pg')
-        
-    //     const rerouteToVideo = `https://www.googleapis.com/youtube/v3/video/`
-    //     try {
-    //         const { data } = await axios.get(rerouteToVideo)
-    //         <Router>
-    //             <Switch>
-    //                 <Redirect to=`/video/${}` />
-    //             </Switch>
-    //         </Router>
-    //     } catch (error) {
-                console.log(error)
-    //     }
+    // componentDidUpdate(){
+    //     this.handlePostClick();
     // }
+    handlePostClick = async (event) => {
+        console.log('rerouting to video pg')
+        const id = event.target.id
+        const rerouteToVideo = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${API_KEY}`
+        try {
+            const { data } = await axios.get(rerouteToVideo)
+            console.log(data)
+        } catch (error) {
+                console.log(error)
+        }
+    }
 
     render() {
         const { feed, landingPage } = this.state
@@ -90,7 +93,7 @@ class Homepage extends Component {
                                 <Thumbnail
                                     imgSrc={el.snippet.thumbnails.medium.url}
                                     title={el.snippet.title}
-                                    id={el.snippet.channelId}
+                                    id={el.id.videoId}
                                     key={el.snippet.channelId}
                                     handlePostClick = {this.handlePostClick}
                                 >
@@ -98,8 +101,6 @@ class Homepage extends Component {
                                 </Thumbnail>
                             ))
                         }
-
-
                     </div>
                 </div>
             )

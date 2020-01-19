@@ -4,23 +4,39 @@ import YouTube from 'react-youtube'
 class Video extends Component {
     constructor() {
         super()
-        state = {
+       this.state = {
         submitted: false,
         comment: {}
         }
     }
 
-submitComment = () =>{
-
-
+onReady = (event) =>{
+    event.target.pauseVideo()
 }
 
-displayComment = () =>{
-    
-}
+// submitComment = () =>{
+
+
+// }
+
+// displayComment = () =>{
+
+// }
     render() {
+        const opts = {
+            height: '390',
+            width: '640',
+            playerVars: { // https://developers.google.com/youtube/player_parameters
+              autoplay: 1
+            }
+          };
         return (
             <div className="video-container">
+                <YouTube 
+                id={this.props.id}
+                onReady ={this.onReady}
+                opt={opts}
+                />
                 <hr></hr>
                 <div className="submit-comment">
                     <form className='comment-form'>

@@ -8,9 +8,9 @@ constructor(props){
 
 render() {
 return(
-<div className ='card' onClick={this.props.handlePostClick}>
-    <img src ={this.props.imgSrc} />
-    <h4>{this.props.title}</h4>
+<div className ='card' onClick={this.props.handlePostClick} id ={this.props.id}>
+    <img src ={this.props.imgSrc} id ={this.props.id}/>
+    <h4 id ={this.props.id}>{this.props.title}</h4>
 
 </div>
 )

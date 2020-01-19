@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import YouTube from 'react-youtube'
+import Comment from './Comment'
 
 class Video extends Component {
     constructor() {
         super()
        this.state = {
         submitted: false,
-        comment: {}
+        comment: {},
+        comments:[]
         }
     }
 
@@ -54,6 +56,13 @@ onReady = (event) =>{
                 <hr></hr>
 
                 <div className="comments">
+                    {
+                        this.comments.push(
+                        <Comment
+                        name={this.comment.name}
+                        comment={this.comment.comment}
+                        />)
+                    }
                 </div>
 
             </div>

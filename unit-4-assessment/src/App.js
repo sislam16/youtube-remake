@@ -16,18 +16,6 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Router>
-          <Switch>
-            <Route path='/'>
-              <Homepage />
-            </Route>
-            <Route path='/videos/:id'></Route>
-            <Route path='/about'>
-              <About />
-            </Route>
-          </Switch>
-        </Router>
-  
       </div>
     );
   }

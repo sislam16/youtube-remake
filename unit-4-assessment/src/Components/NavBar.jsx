@@ -10,12 +10,22 @@ const NavBar = () => {
             <div>
                 <nav className = 'NavBar'>
                     <ul>
-                        <li><strong>YouTube</strong></li>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/about'>About</Link></li>
+                        <li><strong>Youtube</strong></li>
+                        <li><Link to='/' className='nav-link'>Home</Link></li>
+                        <li><Link to='/about' className='nav-link'>About</Link></li>
                     </ul>
                 </nav>
 
+                <Switch>
+                    <Route path='/'>
+                       < Homepage/>
+                    </Route>
+                    {/* <Route path='/videos/:id'/> */}
+                    <Route exact path='/about'>
+                        <About />
+                    </Route>
+                   
+                </Switch>
             </div>
         </Router>
 

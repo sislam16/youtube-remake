@@ -5,9 +5,10 @@ constructor(props){
     super()
 }
 
+
 render() {
 return(
-<div className ='card'>
+<div className ='card' onClick={this.props.handlePostClick}>
     <img src ={this.props.imgSrc} />
     <h4>{this.props.title}</h4>
 

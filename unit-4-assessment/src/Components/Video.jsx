@@ -5,39 +5,39 @@ import Comment from './Comment'
 class Video extends Component {
     constructor() {
         super()
-       this.state = {
-        submitted: false,
-        comment: {},
-        comments:[]
+        this.state = {
+            submitted: false,
+            comment: {},
+            comments: []
         }
     }
 
-onReady = (event) =>{
-    event.target.pauseVideo()
-}
+    onReady = (event) => {
+        event.target.pauseVideo()
+    }
 
-// submitComment = () =>{
+    // submitComment = () =>{
 
 
-// }
+    // }
 
-// displayComment = () =>{
+    // displayComment = () =>{
 
-// }
+    // }
     render() {
         const opts = {
             height: '390',
             width: '640',
             playerVars: { // https://developers.google.com/youtube/player_parameters
-              autoplay: 1
+                autoplay: 1
             }
-          };
+        };
         return (
             <div className="video-container">
-                <YouTube 
-                id={this.props.id}
-                onReady ={this.onReady}
-                opt={opts}
+                <YouTube
+                    id={this.props.id}
+                    onReady={this.onReady}
+                    opt={opts}
                 />
                 <hr></hr>
                 <div className="submit-comment">
@@ -58,10 +58,10 @@ onReady = (event) =>{
                 <div className="comments">
                     {
                         this.comments.push(
-                        <Comment
-                        name={this.comment.name}
-                        comment={this.comment.comment}
-                        />)
+                            <Comment
+                                name={this.comment.name}
+                                comment={this.comment.comment}
+                            />)
                     }
                 </div>
 

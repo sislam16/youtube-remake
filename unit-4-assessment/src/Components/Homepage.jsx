@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import axios from 'axios'
 import API_KEY from '../secrets'
 import Thumbnail from './Thumbnail'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class Homepage extends Component {
     constructor() {
@@ -15,7 +15,7 @@ class Homepage extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         console.log('mounted')
     }
 
@@ -52,7 +52,7 @@ class Homepage extends Component {
     // componentDidUpdate(){
     //     this.handlePostClick();
     // }
-    
+
     handlePostClick = async (event) => {
         console.log('rerouting to video pg')
         const id = event.target.id
@@ -62,7 +62,7 @@ class Homepage extends Component {
             console.log(data)
             // <Redirect to='/videos/:id' from='/home'>
         } catch (error) {
-                console.log(error)
+            console.log(error)
         }
     }
 
@@ -82,6 +82,21 @@ class Homepage extends Component {
                 </div>
             )
         } else if (feed) {
+
+            const thumbnailArr =
+                feed.map(el => (
+                    <Thumbnail
+                        imgSrc={el.snippet.thumbnails.medium.url}
+                        title={el.snippet.title}
+                        id={el.id.videoId}
+                        key={el.snippet.channelId}
+                        handlePostClick={this.handlePostClick}
+                        alt='yt video'
+                    >
+                        {el}
+                    </Thumbnail>
+                ))
+                
             return (
                 <div className='homePg'>
                     <form onSubmit={this.handleSubmit} className='Search'>
@@ -89,21 +104,7 @@ class Homepage extends Component {
                         <button id='searchBtn'>Search</button>
                     </form>
                     <div className="container">
-
-                        {
-                            feed.map(el => (
-                                <Thumbnail
-                                    imgSrc={el.snippet.thumbnails.medium.url}
-                                    title={el.snippet.title}
-                                    id={el.id.videoId}
-                                    key={el.snippet.channelId}
-                                    handlePostClick = {this.handlePostClick}
-                                    alt='yt video'
-                                >
-                                    {el}
-                                </Thumbnail>
-                            ))
-                        }
+                        {thumbnailArr}
                     </div>
                 </div>
             )

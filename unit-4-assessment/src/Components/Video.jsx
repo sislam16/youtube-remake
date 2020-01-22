@@ -6,8 +6,10 @@ class Video extends Component {
     constructor() {
         super()
         this.state = {
+            videoId: this.props.match.params.videoId,
             submitted: false,
-            comment: {},
+            nameInput: '',
+            commentInput: '',
             comments: []
         }
     }
@@ -34,6 +36,8 @@ class Video extends Component {
         };
         return (
             <div className="video-container">
+                <h1>Video</h1>
+            
                 <YouTube
                     id={this.props.id}
                     onReady={this.onReady}
@@ -44,11 +48,11 @@ class Video extends Component {
                     <form className='comment-form'>
                         <label for="name">Name</label>
                         <br />
-                        <input type='text' placeholder='Name..' />
+                        <input type='text' placeholder='Name..' name ='name' />
                         <br />
                         <label for="comment">Comment</label>
                         <br />
-                        <input type='text' placeholder='...' />
+                        <input type='text' placeholder='...' name='comment'/>
                         <br />
                         <button>Submit</button>
                     </form>

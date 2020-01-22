@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import NavBar from './NavBar'
 import axios from 'axios'
 import API_KEY from '../secrets'
 import Thumbnail from './Thumbnail'
-import { Redirect } from 'react-router-dom'
 
 class Homepage extends Component {
     constructor() {
@@ -96,7 +94,7 @@ class Homepage extends Component {
                         {el}
                     </Thumbnail>
                 ))
-                
+
             return (
                 <div className='homePg'>
                     <form onSubmit={this.handleSubmit} className='Search'>

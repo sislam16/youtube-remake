@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Link, Route } from 'react-router-dom'
 import Homepage from './Homepage'
 import About from './About'
+import Video from './Video'
 
 
 const NavBar = () => {
@@ -13,27 +14,19 @@ const NavBar = () => {
                     <li><strong>Youtube</strong></li>
                     <li><Link to='/' className='nav-link'>Home</Link></li>
                     <li><Link to='/about' className='nav-link'>About</Link></li>
+                    <li><Link to ='/video/blah'>Video</Link></li>
                 </ul>
             </nav>
-        <div>
-            <Switch>
 
-                <Route exact path='/' component={Homepage}/>
-        
-
-                {/* <Route path='/videos/:id' render={(props) => (
-                    <Video key={this.props.id} />
-                )}>
-
-                </Route> */}
-
-                <Route path='/about' component={About}/>
-               
-
-            </Switch>
-                </div>
-              
+            <div>
+                <Switch>
+                    <Route exact path='/' component={Homepage} />
+                    <Route path='/videos/:videoId' component={Video}/>
+                    <Route path='/about' component={About} />
+                </Switch>
             </div>
+
+        </div>
 
     )
 }

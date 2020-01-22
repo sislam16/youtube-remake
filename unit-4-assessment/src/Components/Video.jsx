@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import YouTube from 'react-youtube'
 import Comment from './Comment'
+import axios from 'axios'
+import API_KEY from '../secrets'
 
 class Video extends Component {
     constructor() {
         super()
         this.state = {
             videoId: this.props.match.params.videoId,
+            video:null,
             submitted: false,
             nameInput: '',
             commentInput: '',
@@ -26,6 +29,27 @@ class Video extends Component {
     // displayComment = () =>{
 
     // }
+
+    async componentDidMount() {
+        const videoId = this.props.match.params.videoId
+        const rerouteToVideo = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}`
+        try {
+            const { data } = await axios.get(rerouteToVideo)
+            console.log(data)
+            this.setState({
+                video: data.items[0]
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    handlePostClick = async (event) => {
+        console.log('rerouting to video pg')
+       
+    }
+
     render() {
         const opts = {
             height: '390',
@@ -39,10 +63,11 @@ class Video extends Component {
                 <h1>Video</h1>
             
                 <YouTube
-                    id={this.props.id}
+                    id={this.videoId}
                     onReady={this.onReady}
                     opt={opts}
                 />
+
                 <hr></hr>
                 <div className="submit-comment">
                     <form className='comment-form'>

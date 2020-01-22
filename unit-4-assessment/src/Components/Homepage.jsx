@@ -7,7 +7,7 @@ class Homepage extends Component {
     constructor() {
         super()
         this.state = {
-            landingPage: true,
+            submitted: false,
             input: '',
             feed: []
         }
@@ -37,7 +37,7 @@ class Homepage extends Component {
 
             this.setState({
                 feed: payload,
-                landingPage: false
+                submitted: true 
             })
 
             console.log(this.state)
@@ -51,22 +51,9 @@ class Homepage extends Component {
     //     this.handlePostClick();
     // }
 
-    handlePostClick = async (event) => {
-        console.log('rerouting to video pg')
-        const id = event.target.id
-        const rerouteToVideo = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${API_KEY}`
-        try {
-            const { data } = await axios.get(rerouteToVideo)
-            console.log(data)
-            // <Redirect to='/videos/:id' from='/home'>
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
     render() {
-        const { feed, landingPage } = this.state
-        if (landingPage) {
+        const { feed, submitted } = this.state
+        if (!submitted) {
             return (
                 <div className='homePg'>
                     <form onSubmit={this.handleSubmit}>
@@ -79,8 +66,7 @@ class Homepage extends Component {
 
                 </div>
             )
-        } else if (feed) {
-
+        } else{
             const thumbnailArr =
                 feed.map(el => (
                     <Thumbnail

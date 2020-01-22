@@ -14,7 +14,7 @@ const NavBar = () => {
                     <li><strong>Youtube</strong></li>
                     <li><Link to='/' className='nav-link'>Home</Link></li>
                     <li><Link to='/about' className='nav-link'>About</Link></li>
-                    <li><Link to ='/video/blah'>Video</Link></li>
+                    <li><Link to ='/video/:id'>Video</Link></li>
                 </ul>
             </nav>
 

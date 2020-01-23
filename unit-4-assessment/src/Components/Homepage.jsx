@@ -29,7 +29,7 @@ class Homepage extends Component {
         console.log('form submitted')
 
         const { input } = this.state
-        const getVideos = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=${input}&key=${API_KEY}`
+        const getVideos = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=${input}&type=video&key=${API_KEY}`
         try {
             const { data } = await axios.get(getVideos)
             let payload = data.items
@@ -37,7 +37,7 @@ class Homepage extends Component {
 
             this.setState({
                 feed: payload,
-                submitted: true 
+                submitted: true
             })
 
             console.log(this.state)
@@ -66,7 +66,7 @@ class Homepage extends Component {
 
                 </div>
             )
-        } else{
+        } else {
             const thumbnailArr =
                 feed.map(el => (
                     <Thumbnail

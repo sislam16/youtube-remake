@@ -60,3 +60,8 @@ form #searchBtn{
     margin-right: 50px;
 
 }
+
+.video-container{
+    display: block;
+    text-align: center;
+}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import YouTube from 'react-youtube'
-import Comment from './Comment'
-import axios from 'axios'
-import API_KEY from '../secrets'
+// import Comment from './Comment'
+// import axios from 'axios'
+// import API_KEY from '../secrets'
 
 class Video extends Component {
     constructor(props) {
@@ -17,9 +17,6 @@ class Video extends Component {
         }
     }
 
-    // onReady = (event) => {
-    //     event.target.pauseVideo()
-    // }
 
     handleInput = (event) =>{
         this.setState({
@@ -47,7 +44,6 @@ class Video extends Component {
 
     }
 
-    
     // async componentDidMount() {
     //     const videoId = this.props.match.params.videoId
     //     const rerouteToVideo = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}`

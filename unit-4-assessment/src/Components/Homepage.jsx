@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import API_KEY from '../secrets'
+import API_KEY from './secrets'
 import Thumbnail from './Thumbnail'
 
 class Homepage extends Component {

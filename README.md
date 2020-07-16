@@ -1,5 +1,5 @@
 # YouTube React Remake
-## Task
+*YouTube client application that allows users to search for videos, watch a video and leave a comment for it.*
 
 ## Setup and the YouTube API
 
